@@ -27,6 +27,8 @@ contract GameMatch is ReentrancyGuard, Ownable {
         GameStatus status;
         bool player1Claimed;
         bool player2Claimed;
+        bool player1HasPredicted;
+        bool player2HasPredicted;
     }
     
     struct Player {
@@ -98,7 +100,9 @@ contract GameMatch is ReentrancyGuard, Ownable {
             player2Prediction: Prediction.UP,
             status: GameStatus.WAITING,
             player1Claimed: false,
-            player2Claimed: false
+            player2Claimed: false,
+            player1HasPredicted: false,
+            player2HasPredicted: false
         });
         
         activeGames[player1] = gameId;
@@ -114,15 +118,19 @@ contract GameMatch is ReentrancyGuard, Ownable {
         require(msg.sender == game.player1 || msg.sender == game.player2, "Not a player");
         
         if (msg.sender == game.player1) {
+            require(!game.player1HasPredicted, "Already predicted");
             game.player1Prediction = _prediction;
+            game.player1HasPredicted = true;
         } else {
+            require(!game.player2HasPredicted, "Already predicted");
             game.player2Prediction = _prediction;
+            game.player2HasPredicted = true;
         }
         
         emit PredictionMade(_gameId, msg.sender, _prediction);
         
         // Start game if both predictions are in
-        if (game.startPrice == 0) {
+        if (game.player1HasPredicted && game.player2HasPredicted && game.startPrice == 0) {
             _startGame(_gameId);
         }
     }

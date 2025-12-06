@@ -43,7 +43,9 @@ function GameRoom({ gameId, contract, account, onGameEnd }) {
         player2Prediction: gameData[7],
         status: gameData[8],
         player1Claimed: gameData[9],
-        player2Claimed: gameData[10]
+        player2Claimed: gameData[10],
+        player1HasPredicted: gameData[11],
+        player2HasPredicted: gameData[12]
       }
       setGame(gameObj)
       
@@ -97,7 +99,8 @@ function GameRoom({ gameId, contract, account, onGameEnd }) {
 
   const isPlayer1 = account.toLowerCase() === game.player1.toLowerCase()
   const opponent = isPlayer1 ? game.player2 : game.player1
-  const hasPredicted = isPlayer1 ? game.player1Prediction !== 0 : game.player2Prediction !== 0
+  const hasPredicted = isPlayer1 ? game.player1HasPredicted : game.player2HasPredicted
+  const opponentHasPredicted = isPlayer1 ? game.player2HasPredicted : game.player1HasPredicted
 
   return (
     <div className="game-container">
@@ -114,6 +117,9 @@ function GameRoom({ gameId, contract, account, onGameEnd }) {
         <div className="player-card">
           <h3>Opponent</h3>
           <p>{opponent.slice(0, 6)}...{opponent.slice(-4)}</p>
+          {opponentHasPredicted && (
+            <p>✅ Prediction made</p>
+          )}
         </div>
       </div>
 

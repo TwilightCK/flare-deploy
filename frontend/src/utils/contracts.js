@@ -7,7 +7,7 @@ export const GAME_MATCH_ABI = [
   "function getPlayerStats(address _player) external view returns (uint256, uint256, uint256, bool)",
   "function activeGames(address) external view returns (uint256)",
   "function getQueueLength() external view returns (uint256)",
-  "function games(uint256) external view returns (address, address, uint256, uint256, uint256, string, uint8, uint8, uint8, bool, bool)",
+  "function games(uint256) external view returns (address, address, uint256, uint256, uint256, string, uint8, uint8, uint8, bool, bool, bool, bool)",
   "event GameCreated(uint256 indexed gameId, address player1, address player2, uint256 stake)",
   "event PredictionMade(uint256 indexed gameId, address player, uint8 prediction)",
   "event GameCompleted(uint256 indexed gameId, address winner1, address winner2, uint256 payout)",
