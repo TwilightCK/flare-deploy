@@ -2,6 +2,18 @@
 
 A revolutionary dating/social platform built on Flare Network that brings people together through crypto-based prediction games.
 
+## 🚀 LIVE DEMO
+
+**Deployed Contracts (Flare Coston2):**
+- GameMatch: `0x88a5b08F441730b2D452d1F9642b63Cb6b09B251`
+- SmartAccountFactory: `0x5eE66faA4d6867076E4750e36fcF4B093060898B`
+
+**Deploy Frontend to Vercel:**
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+
+See [DEPLOY_NOW.md](DEPLOY_NOW.md) for quick deployment guide.
+
 ## 🎯 Concept
 
 Match with strangers, play quick prediction games with real stakes, and connect through shared wins (or losses)! Uses Flare's FTSO for price feeds and Smart Accounts for seamless UX.
