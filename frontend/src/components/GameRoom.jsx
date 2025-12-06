@@ -67,7 +67,19 @@ function GameRoom({ gameId, contract, account, onGameEnd }) {
       await loadGameData()
     } catch (error) {
       console.error('Error making prediction:', error)
-      alert('Failed to make prediction')
+      let errorMessage = 'Failed to make prediction'
+      
+      if (error.message.includes('Already predicted')) {
+        errorMessage = 'You already made your prediction!'
+      } else if (error.message.includes('Game not in waiting state')) {
+        errorMessage = 'Game has already started!'
+      } else if (error.message.includes('Not a player')) {
+        errorMessage = 'You are not in this game!'
+      } else if (error.message.includes('user rejected')) {
+        errorMessage = 'Transaction cancelled'
+      }
+      
+      alert(errorMessage + '\n\nTip: Try refreshing the page (Ctrl+Shift+R)')
     }
   }
 
