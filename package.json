@@ -1,0 +1,23 @@
+{
+  "name": "stake-and-date",
+  "version": "1.0.0",
+  "description": "Crypto gaming matchmaker on Flare",
+  "scripts": {
+    "check": "node scripts/check-setup.js",
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy": "hardhat run scripts/deploy-and-setup.js --network coston2",
+    "deploy-only": "hardhat run scripts/deploy.js --network coston2",
+    "frontend": "cd frontend && npm run dev",
+    "start": "npm run deploy && npm run frontend"
+  },
+  "keywords": ["flare", "gaming", "dating", "ftso", "smart-accounts"],
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.19.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0",
+    "dotenv": "^16.3.1"
+  }
+}

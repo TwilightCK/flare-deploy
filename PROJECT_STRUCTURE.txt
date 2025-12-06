@@ -1,0 +1,82 @@
+stake-and-date/
+│
+├── 📄 START_HERE.txt              ← READ THIS FIRST!
+├── 📄 QUICK_START.md              ← 5-minute setup guide
+├── 📄 SETUP_GUIDE.md              ← Detailed instructions
+├── 📄 HACKATHON_DEMO.md           ← Demo script & presentation
+├── 📄 PROJECT_STATUS.md           ← Current status & checklist
+├── 📄 README.md                   ← Project overview
+│
+├── 📄 package.json                ← Backend dependencies & scripts
+├── 📄 hardhat.config.js           ← Hardhat configuration
+├── 📄 .env                        ← Environment variables (ADD YOUR KEY!)
+├── 📄 .env.example                ← Example env file
+├── 📄 .gitignore                  ← Git ignore rules
+│
+├── 📁 contracts/                  ← Smart Contracts
+│   ├── GameMatch.sol              ← Main game logic + FTSO
+│   ├── SmartAccountFactory.sol    ← Smart account creation
+│   └── interfaces/
+│       └── IFtsoRegistry.sol      ← FTSO interface
+│
+├── 📁 scripts/                    ← Deployment & utility scripts
+│   ├── deploy.js                  ← Basic deployment
+│   ├── deploy-and-setup.js        ← Deploy + auto-configure (USE THIS!)
+│   ├── check-setup.js             ← Verify setup status
+│   └── update-frontend-env.js     ← Manual config update
+│
+├── 📁 test/                       ← Contract tests
+│   └── GameMatch.test.js          ← Game contract tests
+│
+├── 📁 frontend/                   ← React Frontend
+│   ├── 📄 package.json            ← Frontend dependencies
+│   ├── 📄 vite.config.js          ← Vite configuration
+│   ├── 📄 index.html              ← HTML entry point
+│   ├── 📄 .env.example            ← Example frontend env
+│   │
+│   └── 📁 src/
+│       ├── 📄 main.jsx            ← React entry point
+│       ├── 📄 App.jsx             ← Main app component
+│       ├── 📄 index.css           ← Global styles
+│       ├── 📄 config.js           ← App configuration
+│       │
+│       ├── 📁 components/         ← React components
+│       │   ├── GameRoom.jsx       ← Live game interface
+│       │   ├── MatchQueue.jsx     ← Waiting room
+│       │   └── PlayerStats.jsx    ← Stats dashboard
+│       │
+│       └── 📁 utils/              ← Utility functions
+│           ├── contracts.js       ← Contract ABIs
+│           └── network.js         ← Network utilities
+│
+├── 📁 artifacts/                  ← Compiled contracts (auto-generated)
+├── 📁 cache/                      ← Hardhat cache (auto-generated)
+└── 📁 node_modules/               ← Dependencies (auto-generated)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📋 KEY FILES TO EDIT:
+
+1. .env                            ← Add your private key here
+2. frontend/.env                   ← Auto-created after deployment
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎯 IMPORTANT COMMANDS:
+
+npm run check                      ← Verify setup
+npm run deploy                     ← Deploy contracts (auto-configures frontend)
+npm run frontend                   ← Run frontend dev server
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📊 PROJECT STATS:
+
+Total Files: 30+
+Smart Contracts: 3
+Frontend Components: 6
+Scripts: 5
+Documentation: 7
+Lines of Code: ~1500
+
+═══════════════════════════════════════════════════════════════════════════════

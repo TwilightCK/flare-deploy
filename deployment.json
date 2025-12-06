@@ -1,0 +1,9 @@
+{
+  "network": "coston2",
+  "chainId": 114,
+  "timestamp": "2025-12-06T18:58:11.629Z",
+  "contracts": {
+    "GameMatch": "0x88a5b08F441730b2D452d1F9642b63Cb6b09B251",
+    "SmartAccountFactory": "0x5eE66faA4d6867076E4750e36fcF4B093060898B"
+  }
+}

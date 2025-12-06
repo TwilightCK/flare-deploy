@@ -1,0 +1,106 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    💘 STAKE & DATE - QUICK START GUIDE                       ║
+║                     Crypto Gaming Matchmaker on Flare                        ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+🎯 WHAT YOU HAVE:
+   ✅ Complete smart contracts (GameMatch + SmartAccountFactory)
+   ✅ Beautiful React frontend
+   ✅ FTSO integration for price feeds
+   ✅ All dependencies installed
+   ✅ Deployment scripts ready
+
+📋 QUICK START (5 MINUTES):
+
+1️⃣  GET TEST TOKENS (1 min)
+   → Go to: https://faucet.flare.network/
+   → Select "Coston2 Testnet"
+   → Paste your wallet address
+   → Get free FLR tokens
+
+2️⃣  ADD YOUR PRIVATE KEY (30 sec)
+   → Open .env file
+   → Replace "your_private_key_here" with your MetaMask private key
+   → Save the file
+
+3️⃣  CHECK SETUP (10 sec)
+   → Run: cmd /c "npm run check"
+   → This will verify everything is ready
+
+4️⃣  DEPLOY CONTRACTS (1 min)
+   → Run: cmd /c "npm run deploy"
+   → Copy the contract addresses (will be shown)
+   → Frontend .env will be auto-updated!
+
+5️⃣  RUN THE APP (30 sec)
+   → Run: cmd /c "npm run frontend"
+   → Open: http://localhost:3000
+   → Connect your wallet and play!
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📚 DOCUMENTATION FILES:
+
+   📖 QUICK_START.md      - 5-minute setup guide
+   📖 SETUP_GUIDE.md      - Detailed setup instructions
+   📖 HACKATHON_DEMO.md   - Demo script and presentation guide
+   📖 README.md           - Project overview and features
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎮 HOW TO PLAY:
+
+   1. Connect wallet to Coston2 testnet
+   2. Click "Join Queue" (stakes 0.01 FLR)
+   3. Wait for another player to join
+   4. Both predict: Will FLR/USD go UP or DOWN?
+   5. Wait 5 minutes for FTSO to check price
+   6. Claim rewards if you won!
+
+   💡 TIP: Open 2 browsers to test with yourself!
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🏆 HACKATHON FEATURES:
+
+   ✅ FTSO Integration      - Decentralized price oracle
+   ✅ Smart Accounts        - Ready for gasless transactions
+   ✅ Novel Use Case        - Dating + Gaming + Crypto
+   ✅ Production Ready      - Clean code, tested
+   ✅ Great UX              - Beautiful, responsive design
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🚀 COMMANDS CHEAT SHEET:
+
+   npm run check          - Verify setup
+   npm run compile        - Compile contracts
+   npm run deploy         - Deploy to Coston2 (auto-configures frontend)
+   npm run frontend       - Run frontend dev server
+   npm run test           - Run contract tests
+
+═══════════════════════════════════════════════════════════════════════════════
+
+❓ TROUBLESHOOTING:
+
+   Problem: "Insufficient funds"
+   → Get more test FLR from faucet
+
+   Problem: "Wrong network"
+   → Switch MetaMask to Coston2 testnet
+
+   Problem: "Contract not found"
+   → Make sure you deployed contracts first
+
+   Problem: PowerShell execution policy
+   → Use: cmd /c "command" instead of just command
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎯 NEXT STEP: Run this command to check your setup!
+
+   cmd /c "npm run check"
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Good luck at the hackathon! 🚀
