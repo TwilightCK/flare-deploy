@@ -105,6 +105,22 @@ function GameRoom({ gameId, contract, account, onGameEnd }) {
     }
   }
 
+  const cancelGame = async () => {
+    if (!confirm('Are you sure you want to cancel this game? Both players will be refunded.')) {
+      return
+    }
+    
+    try {
+      const tx = await contract.cancelGame(gameId)
+      await tx.wait()
+      alert('Game cancelled! Your stake has been refunded.')
+      onGameEnd()
+    } catch (error) {
+      console.error('Error cancelling game:', error)
+      alert('Failed to cancel game: ' + error.message)
+    }
+  }
+
   if (!game) {
     return <div className="loading">Loading game...</div>
   }
@@ -141,24 +157,45 @@ function GameRoom({ gameId, contract, account, onGameEnd }) {
           <p>Will FLR/USD go UP or DOWN in the next 5 minutes?</p>
           
           {!hasPredicted ? (
-            <div className="prediction-buttons">
+            <>
+              <div className="prediction-buttons">
+                <button 
+                  className="btn btn-up"
+                  onClick={() => makePrediction(0)}
+                >
+                  📈 UP
+                </button>
+                <button 
+                  className="btn btn-down"
+                  onClick={() => makePrediction(1)}
+                >
+                  📉 DOWN
+                </button>
+              </div>
               <button 
-                className="btn btn-up"
-                onClick={() => makePrediction(0)}
+                className="btn"
+                onClick={cancelGame}
+                style={{marginTop: '20px', background: 'rgba(255, 71, 87, 0.3)', border: '2px solid #ff4757'}}
               >
-                📈 UP
+                ❌ Cancel Game
               </button>
-              <button 
-                className="btn btn-down"
-                onClick={() => makePrediction(1)}
-              >
-                📉 DOWN
-              </button>
-            </div>
+            </>
           ) : (
-            <div className="success">
-              <p>Waiting for opponent to predict...</p>
-            </div>
+            <>
+              <div className="success">
+                <p>Waiting for opponent to predict...</p>
+                <p style={{fontSize: '0.9rem', opacity: 0.8, marginTop: '10px'}}>
+                  {opponentHasPredicted ? 'Opponent has predicted! Starting game...' : 'Waiting for opponent...'}
+                </p>
+              </div>
+              <button 
+                className="btn"
+                onClick={cancelGame}
+                style={{marginTop: '20px', background: 'rgba(255, 71, 87, 0.3)', border: '2px solid #ff4757'}}
+              >
+                ❌ Cancel Game & Get Refund
+              </button>
+            </>
           )}
         </div>
       )}

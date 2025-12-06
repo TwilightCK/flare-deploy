@@ -2,6 +2,7 @@ export const GAME_MATCH_ABI = [
   "function joinQueue() external payable",
   "function leaveQueue() external",
   "function makePrediction(uint256 _gameId, uint8 _prediction) external",
+  "function cancelGame(uint256 _gameId) external",
   "function completeGame(uint256 _gameId) external",
   "function claimRewards(uint256 _gameId) external",
   "function getPlayerStats(address _player) external view returns (uint256, uint256, uint256, bool)",

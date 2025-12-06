@@ -1,5 +1,5 @@
-// Contract addresses - Deployed on Flare Coston2 (UPDATED with bug fix)
-export const GAME_MATCH_ADDRESS = import.meta.env.VITE_GAME_MATCH_ADDRESS || "0x6D15BEd26b3b80AC2E43Aca4c31608607ae20C14";
+// Contract addresses - Deployed on Flare Coston2 (UPDATED with cancel feature)
+export const GAME_MATCH_ADDRESS = import.meta.env.VITE_GAME_MATCH_ADDRESS || "0xdb0CF217C36E637C518400142e681e9fFa622737e";
 export const ACCOUNT_FACTORY_ADDRESS = import.meta.env.VITE_ACCOUNT_FACTORY_ADDRESS || "0x25E5C1A149a21b20d1dF7808C0ec7d2925429448";
 
 // Network configuration

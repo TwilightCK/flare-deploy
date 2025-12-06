@@ -143,6 +143,24 @@ contract GameMatch is ReentrancyGuard, Ownable {
         game.status = GameStatus.ACTIVE;
     }
     
+    function cancelGame(uint256 _gameId) external {
+        Game storage game = games[_gameId];
+        require(game.status == GameStatus.WAITING, "Can only cancel waiting games");
+        require(msg.sender == game.player1 || msg.sender == game.player2, "Not a player");
+        
+        // Refund both players
+        game.status = GameStatus.CANCELLED;
+        
+        (bool success1, ) = game.player1.call{value: game.stakeAmount}("");
+        require(success1, "Refund to player1 failed");
+        
+        (bool success2, ) = game.player2.call{value: game.stakeAmount}("");
+        require(success2, "Refund to player2 failed");
+        
+        activeGames[game.player1] = 0;
+        activeGames[game.player2] = 0;
+    }
+    
     function completeGame(uint256 _gameId) external {
         Game storage game = games[_gameId];
         require(game.status == GameStatus.ACTIVE, "Game not active");
