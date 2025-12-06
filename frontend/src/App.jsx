@@ -27,7 +27,8 @@ function App() {
           method: 'eth_accounts' 
         })
         if (accounts.length > 0) {
-          await connectWallet()
+          // Don't auto-connect, let user click button
+          // This prevents ENS errors on page load
         }
       } catch (error) {
         console.error('Error checking wallet:', error)
@@ -53,7 +54,12 @@ function App() {
         }
       }
 
-      const provider = new ethers.BrowserProvider(window.ethereum)
+      // Create provider without ENS support for Flare
+      const provider = new ethers.BrowserProvider(window.ethereum, {
+        name: 'Flare Coston2',
+        chainId: 114,
+        ensAddress: null // Disable ENS for Flare
+      })
       const accounts = await provider.send("eth_requestAccounts", [])
       const signer = await provider.getSigner()
       
