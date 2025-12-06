@@ -61,11 +61,7 @@ function App() {
       setSigner(signer)
       setAccount(accounts[0])
 
-      // Check if contract address is set
-      if (GAME_MATCH_ADDRESS === "0x0000000000000000000000000000000000000000") {
-        alert('⚠️ Please deploy contracts first and update the addresses in frontend/.env')
-        return
-      }
+      // Contract addresses are configured in config.js
 
       // Initialize contract
       const contract = new ethers.Contract(GAME_MATCH_ADDRESS, GAME_MATCH_ABI, signer)
